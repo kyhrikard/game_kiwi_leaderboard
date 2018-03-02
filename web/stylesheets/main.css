@@ -67,10 +67,6 @@ h1 {
   flex-direction: column;
 }
 
-.nests-out-there p {
-  font-size: .9em;
-}
-
 .nestr-table {
   text-align: left;
   margin-top: 2em;
@@ -79,6 +75,7 @@ h1 {
 .nestr-table td {
   border-top: 1px solid black;
   padding-right: 3em;
+  padding-top: .5em;
 }
 
 @media (max-width: 1200px) {
@@ -96,8 +93,7 @@ h1 {
   }
 
   .nestr-table td {
-    font-size: .9em;
-    padding: 0;
+    padding-right: 0;
   }
 
   main {

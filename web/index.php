@@ -104,9 +104,9 @@ foreach ($topTen as $value) {
     echo "<td>";
     $teamName = $value->team;
     if ($teamName == 'Red') {
-        echo "<img src='images/red_kiwi.png' width='15'>";
+        echo "<img src='images/red_kiwi.png' width='20'>";
     } else {
-        echo "<img src='images/blue_kiwi.png' width='15'>";
+        echo "<img src='images/blue_kiwi.png' width='20'>";
     }
     echo "</td>";
     echo "<td>";
@@ -121,18 +121,18 @@ foreach ($topTen as $value) {
 <div class="nestr-table">
 <h2>100 latest snatches</h2>
 <table>
-<th>When</th>
+<!-- <th>When</th> -->
 <th>Snatcher</th>
 <th>Nest</th>
 <?php
 $topTen = array_slice($snatchHistory, 0, 100);
 foreach ($topTen as $value) {
     echo "<tr>";
-    echo "<td>";
-    echo date('Y-m-d', strtotime("$value->timestamp"));
-    echo "<br>";
-    echo date('H:i', strtotime("$value->timestamp"));
-    echo "</td>";
+    // echo "<td>";
+    // echo date('Y-m-d', strtotime("$value->timestamp"));
+    // echo "<br>";
+    // echo date('H:i', strtotime("$value->timestamp"));
+    // echo "</td>";
     echo "<td>";
     echo "$value->username";
     echo "</td>";
