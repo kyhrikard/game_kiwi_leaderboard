@@ -140,23 +140,23 @@ foreach ($topTen as $value) {
 <div class="nestr-table nestr-table-right">
 <h2>100 latest snatches</h2>
 <table>
-<th>Nest</th>
-<th>Snatcher</th>
 <th>When</th>
+<th>Snatcher</th>
+<th>Nest</th>
 <?php
 $topTen = array_slice($snatchHistory, 0, 100);
 foreach ($topTen as $value) {
     echo "<tr>";
     echo "<td>";
-    echo "$value->nestname";
+    echo date('Y-m-d', strtotime("$value->timestamp"));
+    echo "<br>";
+    echo date('H:i', strtotime("$value->timestamp"));
     echo "</td>";
     echo "<td>";
     echo "$value->username";
     echo "</td>";
     echo "<td>";
-    echo date('Y-m-d', strtotime("$value->timestamp"));
-    echo "<br>";
-    echo date('H:i', strtotime("$value->timestamp"));
+    echo "$value->nestname";
     echo "</td>";
 }
 ?>
