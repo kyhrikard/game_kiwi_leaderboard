@@ -53,12 +53,16 @@ h1 {
 }
 
 .nestr-table-right {
-  margin-top: 2em;
+  margin: 2em 0 0 0;
   width: 100%;
 }
 
 table {
   width: 100%;
+}
+
+.nestr-table-right td {
+  padding-right: 2em;
 }
 
 
