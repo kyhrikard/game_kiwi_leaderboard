@@ -46,12 +46,12 @@
     $data = curl_exec($ch);
     curl_close($ch);
     $nests = json_decode($data);
+    
 ?>
 
 <header>
     <h1>NEST:R leaderboard</h1>
-    <p>0 lines of JavaScript were used building this page, only PHP, which we know shit about</p>
-    <h4><a target="_blank" href="https://nestr.surge.sh">Get your name on the leaderboard here!</a></h4>
+    <h4><a target="_blank" href="https://nestr.surge.sh">Get your name on the leaderboard!</a></h4>
 </header>
 
 <div class="score-div">
@@ -122,17 +122,18 @@ foreach ($topTen as $value) {
 <h2>100 latest snatches</h2>
 <table>
 <!-- <th>When</th> -->
+<th>Date</th>
 <th>Snatcher</th>
 <th>Nest</th>
 <?php
 $topTen = array_slice($snatchHistory, 0, 100);
 foreach ($topTen as $value) {
     echo "<tr>";
-    // echo "<td>";
-    // echo date('Y-m-d', strtotime("$value->timestamp"));
+    echo "<td>";
+    echo date('M-d', strtotime("$value->timestamp"));
     // echo "<br>";
     // echo date('H:i', strtotime("$value->timestamp"));
-    // echo "</td>";
+    echo "</td>";
     echo "<td>";
     echo "$value->username";
     echo "</td>";
