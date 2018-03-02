@@ -140,7 +140,7 @@ foreach ($topTen as $value) {
 <div class="nestr-table nestr-table-right">
 <h2>100 latest snatches</h2>
 <table>
-<th>Snatched nest</th>
+<th>Nest</th>
 <th>Snatcher</th>
 <th>When</th>
 <?php
