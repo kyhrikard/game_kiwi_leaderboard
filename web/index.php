@@ -39,37 +39,47 @@ $data = curl_exec($ch);
 curl_close($ch);
 $snatchHistory = json_decode($data);
 
+$url = 'https://nestr-dev-backend.herokuapp.com/api/nests';
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$data = curl_exec($ch);
+curl_close($ch);
+$nests = json_decode($data);
+
 ?>
 
 <header>
 <h1>NEST:R leaderboard</h1>
 <p>0 lines of JavaScript were used building this page, only PHP, which we know shit about</p>
 <h4><a target="_blank" href="https://nestr.surge.sh">Get your name on the leaderboard here!</a></h4>
-<!-- <p>
-<a target="_blank" href="https://nestr.surge.sh">https://nestr.surge.sh</a>
-</p> -->
 </header>
 
 <div class="score-div">
-    <?php
+<?php
 foreach ($teamStandings as $value) {
-    $teamName = $value->name; 
-    if ($teamName == 'Red'){
+    $teamName = $value->name;
+    if ($teamName == 'Red') {
         echo "<h1 class='redHeading'>";
         //echo  $teamName . ': ';
-        echo  $value->currentscore;
+        echo $value->currentscore;
         echo "</h1>";
+        echo "<a target='_blank' href='https://nestr.surge.sh'>";
         echo "<img src='images/black_kiwi.png' width='50' height='50'>";
-    }
-    else {
+        echo "</a>";
+    } else {
         echo "<h1 class='blueHeading'>";
         //echo  $teamName . ': ';
-        echo  $value->currentscore;
+        echo $value->currentscore;
         echo "</h1>";
     }
-    
 }
 ?>
+</div>
+<div class="nests-out-there">
+    <h2><?php echo count($nests); ?></h2>
+    <p>nests are waiting to get snatched</p>
 </div>
 <main>
 <!-- <div class="nestr-table">
@@ -112,10 +122,9 @@ foreach ($topTen as $value) {
     echo "</td>";
     echo "<td>";
     $teamName = $value->team;
-    if ($teamName == 'Red'){
+    if ($teamName == 'Red') {
         echo "<img src='images/red_kiwi.png' width='15'>";
-    }
-    else {
+    } else {
         echo "<img src='images/blue_kiwi.png' width='15'>";
     }
     echo "</td>";
@@ -131,7 +140,7 @@ foreach ($topTen as $value) {
 <div class="nestr-table nestr-table-right">
 <h2>100 latest snatches</h2>
 <table>
-<th>Nest</th>
+<th>Snatched nest</th>
 <th>Snatcher</th>
 <th>When</th>
 <?php
@@ -145,7 +154,9 @@ foreach ($topTen as $value) {
     echo "$value->username";
     echo "</td>";
     echo "<td>";
-    echo date('Y-m-d H:i', strtotime("$value->timestamp"));
+    echo date('Y-m-d', strtotime("$value->timestamp"));
+    echo "<br>";
+    echo date('H:i', strtotime("$value->timestamp"));
     echo "</td>";
 }
 ?>

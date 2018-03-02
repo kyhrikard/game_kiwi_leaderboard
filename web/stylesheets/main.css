@@ -62,7 +62,7 @@ table {
 }
 
 .nestr-table-right td {
-  padding-right: 2em;
+  padding-right: 0;
 }
 
 
@@ -91,6 +91,16 @@ table {
 
 .blueHeading {
   color: rgb(86,75,251);
+}
+
+.nests-out-there {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nests-out-there p {
+  font-size: .9em;
 }
 
 @media (max-width: 1200px) {
