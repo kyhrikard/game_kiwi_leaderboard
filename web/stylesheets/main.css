@@ -61,12 +61,13 @@ table {
   width: 100%;
 }
 
-.nestr-table-right td {
+.nestr-table-right td:last-child {
   padding-right: 0;
 }
 
 
 .nestr-table td {
+  padding-right: 1em;;
   font-size: .8rem;
 }
 
