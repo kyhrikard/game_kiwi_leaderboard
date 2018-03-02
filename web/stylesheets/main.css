@@ -1,25 +1,31 @@
 * {
-  font-family: 'Cabin';
-  background-color: #ff6978;
   padding: 0;
   margin: 0;
 }
 
 body {
+  background-color: #ff6978;
   overflow-x: hidden;
+  font-family: 'Open Sans';
 }
 
 th, td{
+  padding-bottom: 1em;
   text-align: left;
-  padding: 0 2em 1em 0;
 }
 
 header {
   text-align: center;
-  padding: 1em;
+}
+
+header p {
+  margin: .5em 0 .5em 0;
 }
 
 header h1 {
+  font-family: 'Cabin';
+  background: black;
+  color: white;
   margin: 0;
 }
 
@@ -37,7 +43,17 @@ main {
   justify-content: space-around;
 }
 
-.nestr-table {
+h1 {
+  font-size: 2em;
+}
+
+.nestr-table-left {
+  margin: 2em 5em 0 0;
+  width: 100%;
+}
+
+.nestr-table-right {
+  margin-top: 2em;
   width: 100%;
 }
 
@@ -57,10 +73,29 @@ table {
 .score-div {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.score-div h1 {
+  font-size: 5em;
+}
+
+.redHeading {
+  color: rgb(244,13,44);
+}
+
+.blueHeading {
+  color: rgb(86,75,251);
 }
 
 @media (max-width: 1200px) {
   main {
       flex-direction: column;
   }
+
+  .nestr-table-left {
+    width: 100%;
+  }
+
 }
