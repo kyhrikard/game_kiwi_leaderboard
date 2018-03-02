@@ -9,11 +9,6 @@ body {
   font-family: 'Open Sans';
 }
 
-th, td{
-  padding-bottom: 1em;
-  text-align: left;
-}
-
 header {
   text-align: center;
 }
@@ -47,34 +42,6 @@ h1 {
   font-size: 2em;
 }
 
-.nestr-table-left {
-  margin: 2em 5em 0 0;
-  width: 100%;
-}
-
-.nestr-table-right {
-  margin: 2em 0 0 0;
-  width: 100%;
-}
-
-table {
-  width: 100%;
-}
-
-.nestr-table-right td:last-child {
-  padding-right: 0;
-}
-
-
-.nestr-table td {
-  padding-right: 1em;;
-  font-size: .8rem;
-}
-
-.nestr-table h2 {
-  margin-bottom: 1em;
-}
-
 .score-div {
   display: flex;
   justify-content: space-around;
@@ -104,13 +71,33 @@ table {
   font-size: .9em;
 }
 
+.nestr-table {
+  text-align: left;
+  margin-top: 2em;
+}
+
+.nestr-table td {
+  border-top: 1px solid black;
+  padding-right: 3em;
+}
+
 @media (max-width: 1200px) {
   main {
       flex-direction: column;
+      justify-content: center;
   }
 
-  .nestr-table-left {
+  .nestr-table {
+    text-align: center;
+  }
+
+  .nestr-table table {
     width: 100%;
+  }
+
+  .nestr-table td {
+    font-size: .8em;
+    padding-right: 0;
   }
 
 }
