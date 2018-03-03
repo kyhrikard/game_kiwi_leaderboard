@@ -6,8 +6,7 @@
 body {
   background-color: #ff6978;
   overflow-x: hidden;
-  font-family: 'Open Sans';
-  color: 	#202020;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 header {
@@ -18,13 +17,13 @@ header p {
   margin: .5em 0 .5em 0;
 }
 
-h1, h2, th, a {
-  font-weight: 100;
+h1, h2, th, a, p, td {
+  font-weight: 300;
 }
 
 a {
   text-decoration: none;
-  color: #202020;
+  color: black;
 }
 
 header h1 {
@@ -49,10 +48,6 @@ main {
   justify-content: space-around;
 }
 
-h1 {
-  font-size: 2em;
-}
-
 .score-div {
   display: flex;
   justify-content: space-around;
@@ -62,6 +57,7 @@ h1 {
 
 .score-div h1 {
   font-size: 5em;
+  font-weight: 400;
 }
 
 .redHeading {
@@ -76,6 +72,10 @@ h1 {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.nests-out-there h2 {
+  font-weight: 400;
 }
 
 .nestr-table {
