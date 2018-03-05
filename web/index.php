@@ -57,23 +57,27 @@
 
 <div class="score-div">
 <?php
+$redTeamScore = 0;
+$blueTeamScore = 0;
+
 foreach ($teamStandings as $value) {
     $teamName = $value->name;
     if ($teamName == 'Red') {
-        echo "<h1 class='redHeading'>";
-        //echo  $teamName . ': ';
-        echo $value->currentscore;
-        echo "</h1>";
-        echo "<a target='_blank' href='https://nestr.surge.sh'>";
-        echo "<img src='images/black_kiwi.png' width='50' height='50'>";
-        echo "</a>";
-    } else {
-        echo "<h1 class='blueHeading'>";
-        //echo  $teamName . ': ';
-        echo $value->currentscore;
-        echo "</h1>";
+        $redTeamScore =  $value->currentscore;
+    }
+    else if ($teamName == 'Blue') {
+        $blueTeamScore = $value->currentscore;
     }
 }
+echo "<h1 class='redHeading'>";
+echo $redTeamScore;
+echo "</h1>";
+echo "<a target='_blank' href='https://nestr.surge.sh'>";
+echo "<img src='images/black_kiwi.png' width='50' height='50'>";
+echo "</a>";
+echo "<h1 class='blueHeading'>";
+echo $blueTeamScore;
+echo "</h1>";
 ?>
 </div>
 
