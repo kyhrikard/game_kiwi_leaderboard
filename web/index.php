@@ -83,7 +83,7 @@ echo "</h1>";
 
 <div class="nests-out-there">
     <h2><?php echo count($nests); ?></h2>
-    <p>nests are waiting to get snatched</p>
+    <p>nests are out there</p>
 </div>
 
 <main>
