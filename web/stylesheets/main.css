@@ -27,11 +27,11 @@ a {
 }
 
 header h1 {
-  background: black;
+  background:black;
   color: white;
   margin-bottom: .7em;
   font-size: 1.5em;
-  padding: .2em 0 .2em 0;
+  padding: .7em 0 .7em 0;
 }
 
 header p {
@@ -53,6 +53,7 @@ main {
   justify-content: space-around;
   align-items: center;
   margin-top: 1em;
+  text-shadow: 2px 2px black;
 }
 
 .score-div h1 {
@@ -80,11 +81,19 @@ main {
 
 .nestr-table {
   text-align: left;
-  margin-top: 2em;
+  margin: 2em 0 0 0;
 }
 
 .nestr-table h2 {
   margin-bottom: .5em;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.nestr-table th {
+  background: black;
+  color: white;
+  padding: .2em;
 }
 
 .nestr-table td {
