@@ -47,6 +47,14 @@
     $data = curl_exec($ch);
     curl_close($ch);
     $nests = json_decode($data);
+
+    $neutralNests = 0;
+
+    foreach ($nests as $value) {
+        if ($value->inhabitedby == null){
+            $neutralNests++;
+        }
+    }
     
 ?>
 
@@ -84,6 +92,9 @@ echo "</h1>";
 <div class="nests-out-there">
     <h2><?php echo count($nests); ?></h2>
     <p>nests are out there</p>
+    <br>
+    <h2><?php echo $neutralNests; ?></h2>
+    <p>of them are not inhabited</p>
 </div>
 
 <main>
